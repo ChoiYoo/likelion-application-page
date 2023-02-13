@@ -5,7 +5,8 @@ import datetime
 
 @login_required(login_url='/account/login/')
 def pass_or_fail(request):
-    release_date = datetime.datetime(2023, 3, 7, 13, 0, 0)
+    release_date = datetime.datetime(2023, 2, 12, 13, 0, 0)
+    print(datetime.datetime.now())
     if datetime.datetime.now() < release_date:  # 현재 시간이 3월 7일 서류 합격 발표날보다 일찍이라면 접근할 수 없음.
         return redirect('home')
 
