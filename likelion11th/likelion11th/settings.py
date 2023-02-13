@@ -17,7 +17,7 @@ import pymysql
 pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(DEBUG=(bool, False))
 environ.Env.read_env(env_file=os.path.join(BASE_DIR, ".env"))
 
@@ -34,6 +34,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 
 # Application definition
@@ -104,7 +105,7 @@ DATABASES = {
         "PASSWORD": env("db_password"),
         "HOST": env("db_host"),
         "PORT": env("db_port"),
-     } 
+     }
 }
 
 
@@ -132,11 +133,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_L10N = True
+
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -149,7 +152,7 @@ STATICFILES_DIRS = [
     Path(BASE_DIR, 'account', 'static'), # BASE_DIR/blog/static
 ]
 
-# static django에서는 편의를 위해 흩어져있는 static파일을 한곳에 모으는데, 
+# static django에서는 편의를 위해 흩어져있는 static파일을 한곳에 모으는데,
 # 그때 파일을 모아줄 위치를 나타냅니다.
 STATIC_ROOT = Path(BASE_DIR, 'static') # BASE_DIR/static
 
