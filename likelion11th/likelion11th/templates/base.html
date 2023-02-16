@@ -69,13 +69,17 @@
                         <a class="nav-link page-scroll" href="{% url 'home' %}">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="https://emerald-gouda-9bd.notion.site/24add311de0d4201af92f68cf5d16587">멋사 소개</a>
+                        <a class="nav-link page-scroll" href="https://precious-lumber-c73.notion.site/9a23bcb170654f04bfe257e384881865">멋사 소개</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="{% url 'apply:mydetail' %}">지원서 작성하기</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="{% url 'pass_or_fail:pass_or_fail' %}" >합격 조회</a>
+                        {% if message == "no" %}
+                        <a class="nav-link page-scroll" href="{% url 'pass_or_fail:pass_or_fail' %}" onclick="alert('아직 조회 기간이 아닙니다.');return false;">합격 조회</a>
+                        {% else %}
+                        <a class="nav-link page-scroll" href="{% url 'pass_or_fail:pass_or_fail' %}">합격 조회</a>
+                        {% endif %}
                     </li>
                 </ul>
                 <span class="nav-item">
@@ -107,8 +111,7 @@
         </div> <!-- end of container -->
     </div> <!-- end of copyright --> 
     <!-- end of copyright -->
-    
-    	
+
     <!-- Scripts -->
     <script src="{% static 'js/jquery.min.js'%}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="{% static 'js/popper.min.js'%}"></script> <!-- Popper tooltip library for Bootstrap -->

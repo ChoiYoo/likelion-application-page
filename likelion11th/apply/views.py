@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Apply
 from django.contrib.auth.decorators import login_required
+import datetime
 
 
 # Create your views here.
@@ -43,7 +44,7 @@ def update(request):
 
 @login_required(login_url='/account/login/')
 def mydetail(request):
-    try: 
+    try:
         apply = Apply.objects.get(user = request.user)
         return render(request, 'mydetail.html', {'apply':apply})
     except Apply.DoesNotExist:
