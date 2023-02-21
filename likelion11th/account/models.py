@@ -59,7 +59,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=("email"),
         max_length=200,
         unique=True,
-    )  
+    )
 
     name = models.CharField(
         max_length=20,
@@ -69,6 +69,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     student_num = models.CharField(
         verbose_name="학번",
         max_length=30,
+        unique=True,
     )
 
     grade = models.CharField(
