@@ -26,13 +26,13 @@
                             {%csrf_token%}
                             <br>
                             <div class="form-group">
-                                1. 다양한 IT동아리 중에서 멋쟁이사자처럼 대학 10기를 선택하고 지원하시게 된 이유를 작성해주세요. (500자 이내)
+                                1. 다양한 IT동아리 중에서 멋쟁이사자처럼 대학 11기를 선택하고 지원하시게 된 이유를 작성해주세요. (500자 이내)
                                 <textarea name="q1" class="form-control-input" rows="10">{{apply.first_q}}</textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <br>
                             <div class="form-group">
-                                2-1. 멋쟁이사자처럼 대학 10기부터 기초 개발 스터디는 동일하게 진행되지만 이후에 프론트엔드 파트와 백엔드 파트 중 선택하여 진행하게 됩니다.<br>어느 파트에 지원하시나요?                                    
+                                2-1. 멋쟁이사자처럼 대학 11기부터 기초 개발 스터디는 동일하게 진행되지만 이후에 프론트엔드 파트와 백엔드 파트 중 선택하여 진행하게 됩니다.<br>어느 파트에 지원하시나요?                                    
                                 {% if apply.category == 'FE' %}
                                 <select style="width:300px" name="category" class="form-control-select" id="spassword">
                                     <option value="FE" selected>프론트엔드</option>
