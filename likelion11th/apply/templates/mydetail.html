@@ -56,10 +56,16 @@
                             {% endif %}
                             </div> <!-- end of row -->
                         </div> <!-- end of text-container-->
+                        <!-- 지원 기간 종료 후 -->
                         {%if apply.is_submitted == False %}
+                        <a class="btn-outline-reg" href="{% url 'apply:update' %}" onclick="alert('지원 기간이 종료되었습니다.');return false;">수정</a>
+                        <a class="btn-outline-reg" href="{% url 'apply:submit' %}" onclick="alert('지원 기간이 종료되었습니다.');return false;">최종 제출</a>
+                        {% endif %}
+                        <!-- 지원 기간 종료 전 -->
+                        <!-- {%if apply.is_submitted == False %}
                         <a class="btn-outline-reg" href="{% url 'apply:update' %}">수정</a>
                         <a class="btn-outline-reg" href="{% url 'apply:submit' %}">최종 제출</a>
-                        {% endif %}
+                        {% endif %} -->
                     </div> <!-- end of col-->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
